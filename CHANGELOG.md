@@ -1,5 +1,12 @@
 # Changelog
 
+## Visual documentation update — 24 October 2026
+
+- Rewrote the README for non-technical readers with a complete practice case, plain-English glossary, expandable examples and troubleshooting.
+- Added four editable workflow diagrams, an animated overview and a standalone offline guide with step navigation and practice feedback.
+- Moved setup, storage and testing details into a linked technical guide.
+- Added documentation validation evidence and correct image content types to the optional local server.
+
 ## 2.0.0 — 24 October 2026
 
 - Replaced incomplete handovers with explicit reporting-day and timezone scope, complete incident inclusion, carry-over counts, event timestamps, UTC instants and attribution.

@@ -1,0 +1,117 @@
+{
+  "executedAt": "2026-10-24T19:08:50.367Z",
+  "browser": "153.0.8010.0",
+  "scope": "Plain-language README, four SVG workflows, one GIF and standalone offline guide. Application walkthrough checked against real local assets.",
+  "total": 20,
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "name": "All relative Markdown links resolve to included files",
+      "result": "PASS",
+      "detail": "25 file links checked."
+    },
+    {
+      "name": "Every README jump link has a matching heading",
+      "result": "PASS",
+      "detail": "5 jump targets checked."
+    },
+    {
+      "name": "SVG is accessible and text fits: workflow-overview.svg",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "SVG is accessible and text fits: quick-start.svg",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "SVG is accessible and text fits: decision-guide.svg",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "SVG is accessible and text fits: report-scope.svg",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "All README workflow images load in the rendered document",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "README examples expand and collapse",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "README jump navigation works",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Interactive guide opens on step one and Next/Back cover all six steps",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Direct step buttons and keyboard activation work",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Practice decision explains correct and incorrect selections",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Animation can be shown and hidden explicitly",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Guide opens the real working app in a separate tab",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "SVG and GIF have correct HTTP image content types",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Interactive guide fits 390px on every step, with glossary and animation",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Rendered README fits a 390px screen with expanded help",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "The full written transfer walkthrough completes in the actual app",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Guide and local diagrams work from an extracted folder without a server",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "name": "Guide has no observed JavaScript errors",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    }
+  ],
+  "animation": {
+    "frames": 6,
+    "width": 840,
+    "height": 640,
+    "duration_ms_per_frame": 2100,
+    "repeats": true
+  }
+}

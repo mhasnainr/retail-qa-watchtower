@@ -1,115 +1,198 @@
 # Retail QA Watchtower
 
-An independent retail QA training portfolio: observe an illustrated event, compare the supporting records, record a finding, and produce a complete daily handover.
+**A practice tool for checking store incidents and writing a clear handover report. No coding is needed to try it.**
 
-**All content is synthetic.** This project was not developed for, commissioned by, or endorsed by Active8 Wireless, Metro by T-Mobile or any other employer. It contains no real CCTV, employee information, customer contact data or company SOPs. The rules are explicitly fictional training rules.
+Quality assurance (**QA**) means checking whether work was done correctly and recording what you found. This demo lets you watch an illustrated event, write down the facts, compare the paperwork and decide what should happen next.
 
-## Why this exists
+> **Everything here is fictional.** The stores, events, records and training rules are made up. This is an independent, AI-assisted portfolio project—not work commissioned or endorsed by Active8 Wireless or Metro by T-Mobile. There is no real CCTV or personal customer/employee data.
 
-A package leaving a store is an observation, not a conclusion. A useful QA record needs the source, event time, authorization check, uncertainty and next action. This offline prototype makes that process inspectable, including the finding and closure history.
+**Jump to:** [Open the demo](#open-the-demo) · [Follow one case](#follow-one-case) · [Try another example](#try-another-example) · [Plain-English terms](#plain-english-terms) · [Get help](#get-help)
 
-Version 2 repairs the original demo's incomplete handover and unsupported evidence labels. Reports now include event timestamps, a declared reporting day, older unresolved cases, every incident in scope and a stated excluded count. Reviews require supporting records and recorded outcomes where appropriate.
+[![Six-step workflow: watch an event, record facts, check records, decide, prepare the report and keep a copy.](docs/images/workflow-overview.svg)](docs/images/workflow-overview.svg)
 
-## Run the application
+*Click a diagram to open a larger version. These are explanatory diagrams, not application screenshots.*
 
-1. Extract the entire folder.
-2. Open `index.html` in a modern browser with JavaScript enabled. Keep `styles.css`, `data.js`, `core.js`, `store.js` and `app.js` beside it.
-3. Start with **Observation Desk**. The included fictional scenarios are dated **24 October 2026**; the report initially selects that day.
+<details>
+<summary><strong>Watch the animated workflow overview</strong></summary>
 
-No installation, signup, paid API, backend or internet connection is required for the application. Direct file launch and saving were checked in the Chromium build named in [the execution record](test-results/browser-results.json). Storage behavior for `file:` pages varies by browser. If storage is unavailable, the app explains the failure and offers an explicit temporary session; export JSON before closing a temporary tab.
+![Animated diagram highlighting each of the six steps in turn. It illustrates the process, not a recording of the application.](docs/images/workflow-demo.gif)
 
-For a consistent local origin, use Node.js 22 or later:
+The animation repeats. The numbered diagram above provides the same information without movement.
 
-```sh
-npm run serve
-```
+</details>
 
-Open `http://127.0.0.1:8080`. This local server uses Node built-ins; application dependencies do not need to be installed. The app can also be served by any static host.
+## Open the demo
 
-## Walkthrough
+1. **Download the project ZIP.** On GitHub, use the green **Code** button, then **Download ZIP**. You can also use the ZIP supplied with this project.
+2. **Extract the ZIP first.** On Windows, right-click it and choose **Extract All**. Open the extracted project folder and keep its files together.
+3. **Double-click START_HERE.html** for the clickable beginner guide. To go straight to the working demo, double-click **index.html**.
 
-1. **Observation Desk:** play or step through three distinct illustrated sequences. Write an observation in your own words; facts are not prefilled. Optional guidance is labeled.
-2. **Incident Register:** record store, camera/source, observation time and timezone, recorder, facts and next action. Creation time is stored separately in UTC.
-3. **Evidence & Cases:** inspect actual fictional dispatch, exit, POS, approval-search, receipt, return and callback records. Worked examples are answer keys, not client results or independent assessments.
-4. **Review / history:** qualify evidence using matching record IDs and a specific finding. Record a recipient when escalating. Resolution requires qualified evidence, reviewer, supporting records, outcome and time. Reopening and corrections retain prior history and original facts.
-5. **QA Task Queue:** record the comparison, reviewer, review result and escalation recipient, rather than only changing a status.
-6. **Daily Report:** choose and **save** the analyst, reporting date and timezone. The report includes all observations in that day and older unresolved cases, ordered with High priority first. Future observations and older resolved cases are excluded with an explicit count. The task queue is labeled a current snapshot, not daily throughput.
-7. **Export:** incident/task CSV, text handover or JSON backup. Print produces a handover-only layout.
+No account, payment, installation or internet connection is needed to try the downloaded demo. A browser such as Chrome opens the HTML files. Opening an HTML file inside GitHub shows its source; download and extract the folder to use it.
 
-The six-question judgment exercise reinforces record-based reasoning. It does not certify CCTV monitoring ability or job readiness.
+[![Download the ZIP, extract the folder, then open START_HERE.html or index.html.](docs/images/quick-start.svg)](docs/images/quick-start.svg)
 
-## Complete synthetic cases
+**What makes this interactive?** On GitHub, expand the examples and help sections below, use the jump links and enlarge the diagrams. In the downloaded **START_HERE.html** guide, use **Next / Back**, choose a step and try a practice decision. The application itself contains the working forms, records and reports.
 
-| Case | Comparison | Defensible outcome |
-|---|---|---|
-| Authorized transfer | Package, quantity, destination and time match; approval precedes movement | No deviation found in the supplied records; retain the comparison and close. |
-| 40% discount | $80 / $200 × 100 = 40%; limited approval extract has no matching entry | Request authorization and escalate the evidence gap; do not infer intent. |
-| Return mismatch | Transaction, quantity and $25 match; item codes differ | Document the mismatch and request clarification. |
+## Follow one case
 
-See [worked case files](docs/CASE_FILES.md) and [supporting records](data/SOURCE_RECORDS.json). The [sample handover](docs/SAMPLE_HANDOVER.txt) is generated from the fictional starting state, with a fixed, clearly labeled preparation time.
+Try this short exercise: **Was a package leaving the store an authorized transfer?** Use the fictional example dated **24 October 2026**. The starting dataset already includes a completed version; your practice entry creates an additional observation.
 
-## Data integrity and recovery
+### 1. Watch what happened
 
-- Every operation is stored under a unique local-storage key. Independent additions in multiple tabs do not overwrite one shared snapshot.
-- Browsers with Web Locks serialize commits. Without Web Locks, the operation journal still preserves independent additions; version checks and deterministic replay identify conflicting reviews. Conflicting operations are retained and surfaced for inspection, not silently applied.
-- Storage events refresh other tabs. An open review keeps its original version, so submitting a stale review is rejected while its draft remains available.
-- Invalid stored entries are excluded from rendering and retained verbatim in **Export recovery data**. The app does not silently replace corrupt data.
-- Legacy `qa-watchtower-v1` data is preserved. The explicit migration validates incidents, reopens unsupported old evidence/closure labels for review, records the original labels, and interprets old local times in the viewer's supported timezone. Confirm imported timezones. The full original task data remains in recovery export; the new task templates start from the fictional baseline because old task statuses had no attributable review history.
-- **Reset synthetic demo** creates a new active generation. Earlier operations remain in JSON backups. A reset is not secure deletion. Existing JSON backup files are inspectable recovery artifacts; an automated JSON restore/import interface is not provided.
-- Browser storage and this history are editable by the device owner. Neither is a tamper-proof audit system. Clearing browser/site data can remove the local journal; keep backups.
+Open **Observation Desk**. Find **Authorized package transfer** and press **Next frame** or **Play sequence**. Then select **Write observation**.
 
-## CSV handling
+Record what the sequence establishes. A package passing an exit is not, by itself, evidence of theft.
 
-The committed `SAMPLE_INCIDENTS.csv` uses exactly the same columns and seed values as the application's incident export. CSV text is quoted correctly. Formula-leading values (including whitespace/control prefixes and full-width formula characters) receive a leading apostrophe so the generated field does not start with a formula marker. The JSON backup retains the original values losslessly.
+### 2. Write the observation
 
-CSV interpretation varies among spreadsheet applications and after saving/reopening. Import columns explicitly as **text** and inspect untrusted exports; no universal spreadsheet-safety guarantee is claimed. The execution record verifies the exported bytes, not Excel/LibreOffice formula execution.
+In **Incident Register**, the example supplies the store, camera, date, time and timezone. The notes are blank so you can write your own account.
 
-## Testing
-
-The application itself has no third-party runtime dependencies. The browser tests use a pinned Playwright development dependency.
-
-```sh
-npm ci
-npx playwright install chromium
-npm test
-```
-
-On Linux systems missing browser libraries, use `npx playwright install --with-deps chromium` in an appropriate development/CI environment. To test an already installed Chromium binary:
-
-```sh
-CHROMIUM_EXECUTABLE_PATH=/absolute/path/to/chromium npm run test:browser
-```
-
-Individual commands:
-
-```sh
-npm run test:unit
-npm run test:browser
-npm run fixtures
-```
-
-`fixtures` regenerates the sample CSVs, complete synthetic source data, worked examples and sample handover from `data.js` and the shared domain rules. Browser tests write a dated execution record to `test-results/browser-results.json`. Generated diagnostic print files stay under the ignored `test-results/internal/` folder.
-
-Read [the test plan](docs/TEST_PLAN.md), [the review resolution matrix](docs/REVIEW_RESOLUTION.md), and [the validation report](docs/VALIDATION.md) for scope and results. The GitHub Actions workflow runs the suites on push or pull request; its execution status must be checked separately from the included local results.
-
-## Project files
-
-| Path | Purpose |
+| Field | What to enter for this practice case |
 |---|---|
-| `index.html`, `styles.css`, `app.js` | Accessible interface, responsive layout and interactions. |
-| `core.js` | Validation, time conversion, review rules, journal replay, reporting and CSV encoding. |
-| `store.js` | Local operation journal, conflict handling, temporary mode and legacy migration. |
-| `data.js` | Fictional stores, source records, rules, starting incidents/tasks and case answer keys. |
-| `SAMPLE_INCIDENTS.csv`, `data/` | Export-schema example and complete inspectable fictional records. |
-| `docs/` | Cases, sample handover, test plan, defect fixes and validation evidence. |
-| `tests/`, `test-results/` | Reproducible domain/browser tests and actual execution records. |
-| `tools/`, `package.json`, `package-lock.json` | Local server, fixture generation and pinned development setup. |
-| `.github/workflows/qa.yml` | Automated domain/browser checks. |
+| Recorded by | **Demo Learner**, or another clearly fictional name. |
+| Observable facts | Describe the package crossing the marked exit. Avoid guessing the person's intention. |
+| Evidence needed / next action | Compare the exit record with the approved dispatch record. |
+| Evidence state | Leave **Needs verification** until you have checked the records. |
 
-## Limits and honest portfolio positioning
+Select **Save timestamped observation**. A confirmation tells you it was saved. If an error appears, correct it before continuing.
 
-This is a self-created, AI-assisted training prototype. It is suitable as supporting evidence of structured retail/operations QA reasoning. It is not employer work experience, a production evidence system, an AI surveillance product or proof of improved loss-prevention results.
+### 3. Check the matching records
 
-There is no video ingestion, identity recognition, live integration, authentication, production access control, retention enforcement, secure evidence upload, API or database. Real employer rules are unknown. The illustrated sequences do not establish sustained real-world monitoring ability. The repository also demonstrates software testing through executed cases and reproducible defects/fix checks; it does not demonstrate API or SQL testing.
+Open **Evidence & Cases**, then expand **DISPATCH-607** and **EXIT-607**. A dispatch record is the paperwork authorizing a package to move.
 
-The completed local checks and their browser/version limits are recorded in `docs/VALIDATION.md`. Firefox, Safari, real-device usability, full screen-reader/accessibility conformance and production security have not been certified.
+| Compare | What the supplied records show |
+|---|---|
+| Package reference | Both identify **PKG-303-07**. |
+| Quantity | Both show one package. |
+| Destination | Both identify **Demo Hub B**. |
+| Movement time | Both identify **18:05 UTC**, which is **11:05** in the example store's Los Angeles timezone. |
+| Approval | Approval at **17:50 UTC** came before the movement. |
+
+### 4. Record the result
+
+Return to your new entry in **Incident Register** and select **Review / history**.
+
+- Enter the reviewer's demo name.
+- Select **DISPATCH-607** and **EXIT-607** as supporting records. On a computer, hold **Ctrl** (Windows/Linux) or **Command** (Mac) while selecting both.
+- Explain the matching details in **Verification finding**.
+- Choose **No deviation found**, set the workflow to **Resolved**, and record the **Resolution outcome** and **Reason / result for this update**.
+- Select **Save review and history**.
+
+For this fictional case, the records support an authorized transfer. The app keeps the original observation and adds who reviewed it, the result and the review time.
+
+[![Three alternative outcomes: matched records and approval support closure; missing records require follow-up; mismatching details require clarification.](docs/images/decision-guide.svg)](docs/images/decision-guide.svg)
+
+### 5. Prepare the handover
+
+Open **Daily Report**. Enter a demo name, choose **24 October 2026** and the reporting timezone, then select **Save report settings**. A timezone tells the app which part of the world defines the reporting day.
+
+Choose **Download .txt report** for a readable text file, or **Print / Save PDF** for a printable copy. Every included case is listed; the report does not stop after eight incidents.
+
+[![The daily report includes events from the selected day plus older unresolved cases. Older closed cases and future events are left out with a count shown.](docs/images/report-scope.svg)](docs/images/report-scope.svg)
+
+### 6. Keep a copy
+
+Use **Export JSON backup** to save a complete copy of the local records and history. This backup is for safekeeping and inspection; the demo does not have a button that automatically restores it.
+
+For examples, open the [sample handover report](docs/SAMPLE_HANDOVER.txt) or [worked case files](docs/CASE_FILES.md).
+
+## Try another example
+
+Click an example to reveal its comparison and next action. These are fictional answer keys, not client results or independent assessments.
+
+<details>
+<summary><strong>A large discount: does an absent approval prove a violation?</strong></summary>
+
+**Check:** The transaction is $200 before an $80 discount. The customer pays $120. The discount is **$80 ÷ $200 × 100 = 40%**.
+
+The fictional training rule requires approval for discounts above 20%. The supplied approval extract has no matching entry, but it is only a limited extract.
+
+**Next step:** Request the missing approval. If it needs a supervisor, record their name or role and why you are sending it to them. An absent record in this extract does not prove that approval never existed.
+
+**Where to practice:** **QA Task Queue → DISC-441 → Review task**. Inspect **POS-441** and **APPROVAL-INDEX-441** in **Evidence & Cases**.
+
+</details>
+
+<details>
+<summary><strong>A return: the amount matches, but does the item match?</strong></summary>
+
+**Check:** The receipt lists **PHONE-CASE-A**. The related return lists **CHARGER-B**. The transaction reference, quantity and $25 amount match; the item codes do not.
+
+**Next step:** Record the exact mismatch and ask for clarification before calling the return fully checked. Do not infer intent.
+
+**Where to practice:** **QA Task Queue → RET-120 → Review task**. Inspect **RECEIPT-120** and **RETURN-120** first. If you choose **Needs escalation**, enter the recipient and what they need to clarify.
+
+</details>
+
+<details>
+<summary><strong>Test your judgment with six practice questions</strong></summary>
+
+Open **Judgment Exercise**, select your answers and choose **Check answers**. You receive a score and explanations. This is practice, not a qualification or proof of job readiness.
+
+</details>
+
+## Plain-English terms
+
+| Term in the app | What it means |
+|---|---|
+| Observation / incident | An event worth recording or checking. It is not automatically wrongdoing. |
+| Supporting record / evidence | The paperwork or log used to check what happened. Every supplied record is fictional. |
+| Needs verification | More checking is needed before reaching a conclusion. |
+| Corroborated by records | The selected records support the stated facts. Say exactly what they support in the written finding. |
+| No deviation found | The checked event shows no difference from the applicable fictional rule. |
+| Escalated | Sent to a supervisor or other authorized person for action. |
+| Resolved / disposition | A recorded outcome explains how the case was closed. |
+| Carry-over | An older case that is still open and needs attention. |
+| Handover | A report helping the next person understand what happened and what still needs action. |
+| UTC | A common time reference for comparing records from different timezones. |
+| CSV | A table file that can be opened in a spreadsheet program. |
+| JSON backup | A complete, structured text copy of the records and their history. |
+
+## Get help
+
+<details>
+<summary><strong>I can see code instead of the demo</strong></summary>
+
+On GitHub, HTML files are shown as source code. Download the ZIP, extract it and open **START_HERE.html** or **index.html** from the extracted folder. If a text editor opens, right-click the file and choose **Open with → Chrome** or another browser.
+
+</details>
+
+<details>
+<summary><strong>The app cannot save, or says “Temporary session”</strong></summary>
+
+Do not assume the entry has been saved. Read the message; the form keeps your draft when saving fails. You can retry or explicitly choose **Use temporary session**.
+
+In a temporary session, changes exist only in that tab. Export a **JSON backup** and any report you need before closing it. Different browsers handle saving from directly opened files differently.
+
+</details>
+
+<details>
+<summary><strong>My totals differ from the daily report</strong></summary>
+
+The top cards summarize the whole register. The daily report uses your selected date and timezone, plus older unresolved cases. Older closed cases and future-dated events are excluded with a count shown. The task list is a current snapshot, not a count of work completed that day.
+
+</details>
+
+<details>
+<summary><strong>I want to start again, or I found a recovery warning</strong></summary>
+
+**Reset synthetic demo** restores the fictional starting records after confirmation. Earlier local operations remain in the backup history; reset is not secure deletion.
+
+If stored data cannot be read, use **Export recovery data** first. Do not clear browser data if you still need it. An older demo can be explicitly migrated, but old evidence and closure labels must be checked again.
+
+</details>
+
+<details>
+<summary><strong>I want to open a CSV in a spreadsheet</strong></summary>
+
+Import its columns as **text**, especially if any entries came from someone else. Spreadsheet programs can interpret some text as formulas. The app adds a protective text prefix to formula-like values, but handling varies among spreadsheet programs and after saving/reopening. The JSON backup preserves the original values.
+
+</details>
+
+## For reviewers and developers
+
+The application checks passed: **30 checks of the data rules and 37 browser checks**. Execution records and limits are included. GitHub also runs the checks when changes are published. See [validation evidence](docs/VALIDATION.md), [the test plan](docs/TEST_PLAN.md), [review fixes](docs/REVIEW_RESOLUTION.md) and the [technical guide](docs/TECHNICAL_GUIDE.md).
+
+The four diagrams and animation are included in **docs/images/**. The [documentation checks](docs/DOCUMENTATION_CHECKS.md) record the checks of this guide, its images and links.
+
+This self-created, AI-assisted training prototype does not connect to live cameras, identify people, use real company systems or prove reduced losses. Local records can be changed by the device owner; this is not a tamper-proof production evidence system. Actual employer rules and evidence procedures must come from the employer.
