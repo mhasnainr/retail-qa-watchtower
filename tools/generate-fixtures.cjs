@@ -1,0 +1,11 @@
+const fs=require('node:fs'),path=require('node:path'),C=require('../core.js'),D=require('../data.js');
+const root=path.resolve(__dirname,'..'),state=C.seed();state.settings.analyst='Fictional Demo Analyst';
+for(const dir of ['data','docs'])fs.mkdirSync(path.join(root,dir),{recursive:true});
+fs.writeFileSync(path.join(root,'SAMPLE_INCIDENTS.csv'),C.csv(C.incidentRows(C.seed())));
+fs.writeFileSync(path.join(root,'data/QA_TASKS.csv'),C.csv(C.taskRows(C.seed())));
+fs.writeFileSync(path.join(root,'data/SOURCE_RECORDS.json'),JSON.stringify({classification:D.classification,records:D.records,policies:D.policies},null,2)+'\n');
+fs.writeFileSync(path.join(root,'data/STARTING_DATA.json'),JSON.stringify({schema:'retail-qa-watchtower/v2',classification:D.classification,state:C.seed()},null,2)+'\n');
+fs.writeFileSync(path.join(root,'docs/SAMPLE_HANDOVER.txt'),C.report(state,'2026-10-24T18:30:00.000Z'));
+const cases='# Worked synthetic case files\n\nThese are fictional training answer keys, not client results or completed work by the applicant. Inspect the underlying records in `data/SOURCE_RECORDS.json` or the app.\n\n'+D.examples.map(x=>`## ${x.id} — ${x.title}\n\nSources: ${x.refs.join(', ')}.\n\nComparison: ${x.comparison}\n\nFinding: ${x.finding}\n\nAction / closure: ${x.action}\n`).join('\n');
+fs.writeFileSync(path.join(root,'docs/CASE_FILES.md'),cases);
+console.log('Generated sample CSVs, complete supporting data, case files and a labeled synthetic handover.');

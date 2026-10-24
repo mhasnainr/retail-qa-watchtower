@@ -1,0 +1,94 @@
+RETAIL QA WATCHTOWER — DAILY HANDOVER
+SYNTHETIC TRAINING DATA — NOT A COMPANY REPORT
+Prepared: 2026-10-24T18:30:00.000Z
+Prepared by: Fictional Demo Analyst
+Reporting day: 2026-10-24 (America/New_York)
+Period: 2026-10-24T04:00:00.000Z inclusive to 2026-10-25T04:00:00.000Z exclusive
+
+1. REPORTING SCOPE
+Observed in reporting day: 3
+Carry-over unresolved: 0
+Included incidents: 3
+Open: 2 | Escalated: 0 | Resolved: 1
+Excluded historical-resolved or future-dated incidents: 0
+All-time register total (context only): 3
+All included incidents appear below; no truncation.
+
+2. INCIDENTS (HIGH PRIORITY FIRST)
+OBS-1001 | Medium | Open | Demo Store 101 | CAM-02
+Scope: Observed in reporting day
+Observed: 2026-10-24 09:12:00 America/New_York | UTC: 2026-10-24T13:12:00.000Z
+Recorded: 2026-10-24T18:10:00.000Z by Fictional Demo Analyst
+Facts: One carton approached the rear exit in the illustrated sequence. Departure and authorization are not established.
+Next action: Request dispatch authorization for BOX-101-09 and compare movement details.
+Evidence state: Needs verification
+Supporting records: Not yet supplied
+Reviewer: Not yet reviewed
+Finding: Pending verification
+Assigned / escalation recipient: Not assigned
+Disposition: Not resolved
+Resolved at: Not resolved
+Corrections: None
+History: 1 attributed entries; complete history is available in the register and JSON backup.
+
+OBS-1002 | Medium | Open | Demo Store 202 | POS-REVIEW
+Scope: Observed in reporting day
+Observed: 2026-10-24 10:34:00 America/Chicago | UTC: 2026-10-24T15:34:00.000Z
+Recorded: 2026-10-24T18:10:00.000Z by Fictional Demo Analyst
+Facts: The supplied POS extract records an $80 discount on a $200 transaction; the approval reference is absent from this extract.
+Next action: Compare POS-441 with APPROVAL-INDEX-441 and request approval for TX-202-441.
+Evidence state: Needs verification
+Supporting records: Not yet supplied
+Reviewer: Not yet reviewed
+Finding: Pending verification
+Assigned / escalation recipient: Not assigned
+Disposition: Not resolved
+Resolved at: Not resolved
+Corrections: None
+History: 1 attributed entries; complete history is available in the register and JSON backup.
+
+OBS-1003 | Low | Resolved | Demo Store 303 | CAM-03
+Scope: Observed in reporting day
+Observed: 2026-10-24 11:05:00 America/Los_Angeles | UTC: 2026-10-24T18:05:00.000Z
+Recorded: 2026-10-24T18:10:00.000Z by Fictional Demo Analyst
+Facts: One package crossed the marked exit at 11:05 America/Los_Angeles in the synthetic exit log.
+Next action: Retain DISPATCH-607 and EXIT-607 cross-check.
+Evidence state: No deviation found
+Supporting records: DISPATCH-607, EXIT-607
+Reviewer: Fictional Demo Analyst
+Finding: Package PKG-303-07, quantity one, destination Demo Hub B and the 18:05 UTC movement match DISPATCH-607. Approval at 17:50 UTC precedes departure.
+Assigned / escalation recipient: Not assigned
+Disposition: Authorized transfer in the supplied fictional records; close with no deviation found.
+Resolved at: 2026-10-24T18:15:00.000Z
+Corrections: None
+History: 2 attributed entries; complete history is available in the register and JSON backup.
+
+3. ADMINISTRATIVE QUEUE — CURRENT SNAPSHOT, NOT DAILY THROUGHPUT
+Pending: 3 | Needs escalation: 0 | Reviewed: 1
+RET-120 | Demo Store 101 | Sales return | Pending
+Question: Does the return item match the original receipt?
+Records: RECEIPT-120, RETURN-120
+Result: Not reviewed
+Reviewer: Not assigned | Recipient: Not assigned | Updated: 2026-10-24T18:10:00.000Z
+
+DISC-441 | Demo Store 202 | Discount check | Pending
+Question: Can approval for the 40% discount be established from the supplied records?
+Records: POS-441, APPROVAL-INDEX-441
+Result: Not reviewed
+Reviewer: Not assigned | Recipient: Not assigned | Updated: 2026-10-24T18:10:00.000Z
+
+CALL-219 | Demo Store 202 | Customer callback | Pending
+Question: Was the callback completed by the promised time?
+Records: CALL-219
+Result: Not reviewed
+Reviewer: Not assigned | Recipient: Not assigned | Updated: 2026-10-24T18:10:00.000Z
+
+STOCK-607 | Demo Store 303 | Inventory movement | Reviewed
+Question: Does the exit match the authorized dispatch?
+Records: DISPATCH-607, EXIT-607
+Result: Package, quantity, destination and movement time match; approval precedes exit.
+Reviewer: Fictional Demo Analyst | Recipient: Not assigned | Updated: 2026-10-24T18:10:00.000Z
+
+4. HANDOVER CONTROL
+Apply only the fictional training rules supplied with this demo. Actual company procedures and escalation timings are unknown. Observations do not establish intent. No real footage, people or company data are used.
+Journal conflicts requiring review: 0

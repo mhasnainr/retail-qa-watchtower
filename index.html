@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Independent retail QA training portfolio with synthetic observation sequences, source records, attributed review history and daily handovers.">
+  <title>Retail QA Watchtower · Independent training portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script><script defer src="core.js"></script><script defer src="store.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to workspace</a>
+<header><div class="brand"><span class="brandmark" aria-hidden="true">W</span><div><h1>Retail QA Watchtower <span class="tag">INDEPENDENT PROTOTYPE · v2</span></h1><p>Observe carefully. Verify the record. Make the handover defensible.</p></div></div></header>
+<main id="main" class="shell">
+  <aside class="notice"><strong>Synthetic training demonstration.</strong> No real CCTV, employees or company data. The illustrated sequences, policies and supporting records are fictional. Not developed for or endorsed by Active8 Wireless or Metro by T-Mobile. Actual company procedures and escalation timings are unknown.</aside>
+  <div id="storageBanner" class="warning" role="status" hidden></div>
+  <div class="utilities"><span id="persistenceStatus" class="small"></span><div class="buttons"><button id="backupButton">Export JSON backup</button><button id="recoveryButton">Export recovery data</button><button id="migrateButton" hidden>Migrate earlier demo</button><button id="temporaryButton" hidden>Use temporary session</button></div></div>
+  <p id="globalStatus" class="feedback" role="status" aria-live="polite"></p>
+  <div id="metrics" class="metrics" aria-label="All-time register metrics"></div>
+  <nav class="nav" aria-label="Workspace"><button data-tab="desk" aria-controls="desk" aria-current="page">Observation Desk</button><button data-tab="incidents" aria-controls="incidents">Incident Register</button><button data-tab="tasks" aria-controls="tasks">QA Task Queue</button><button data-tab="evidence" aria-controls="evidence">Evidence &amp; Cases</button><button data-tab="report" aria-controls="report">Daily Report</button><button data-tab="exercise" aria-controls="exercise">Judgment Exercise</button></nav>
+
+  <section id="desk" aria-labelledby="deskHeading">
+    <div class="bar"><div><p class="eyebrow">01 / OBSERVATION</p><h2 id="deskHeading" tabindex="-1">Follow the sequence. Write your own observation.</h2><p class="small">Step through the fictional frames. Notes start blank; guidance is optional. This exercise does not certify sustained CCTV-monitoring ability.</p></div><button id="manualEntry" class="primary">+ Manual incident entry</button></div>
+    <div id="cameras" class="three"></div>
+  </section>
+
+  <section id="incidents" aria-labelledby="incidentsHeading" hidden>
+    <p class="eyebrow">02 / INCIDENT REGISTER</p><h2 id="incidentsHeading" tabindex="-1">Record facts, then qualify them with evidence.</h2>
+    <div class="two"><article class="panel"><h3>New observation</h3><form id="incidentForm" novalidate>
+      <div><label for="store">Demo store</label><select id="store" required></select></div>
+      <div><label for="camera">Camera / source reference</label><input id="camera" required maxlength="60" placeholder="CAM-02 or a source record"></div>
+      <div><label for="eventTime">Observed date and time</label><input id="eventTime" type="datetime-local" required></div>
+      <div><label for="eventZone">Observation timezone</label><select id="eventZone" required></select></div>
+      <div><label for="kind">Category</label><select id="kind"></select></div>
+      <div><label for="priority">Provisional triage priority</label><select id="priority"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
+      <div><label for="recorder">Recorded by (demo name)</label><input id="recorder" required maxlength="80" placeholder="Your name or a fictional analyst"></div>
+      <div><label for="confidence">Evidence state</label><select id="confidence"></select></div>
+      <div class="wide"><label for="observed">Observable facts — write your own account</label><textarea id="observed" required minlength="12" maxlength="4000" placeholder="Describe what the sequence or source establishes, including any uncertainty."></textarea></div>
+      <div class="wide"><label for="verify">Evidence needed / next action</label><textarea id="verify" required minlength="8" maxlength="2000"></textarea></div>
+      <div class="wide"><label for="newRefs">Supporting records (optional until qualifying evidence)</label><select id="newRefs" multiple size="3"></select><p class="small">Select multiple records with Ctrl/Cmd, or use the device’s selection control. Inspect them in Evidence &amp; Cases.</p></div>
+      <div><label for="newReviewer">Reviewer (required for qualified evidence)</label><input id="newReviewer" maxlength="80"></div>
+      <div><label for="newFinding">Verification finding (required for qualified evidence)</label><textarea id="newFinding" maxlength="2000"></textarea></div>
+      <div class="wide"><p id="savedNote" class="feedback" role="status"></p><button class="primary" type="submit">Save timestamped observation</button></div>
+    </form></article>
+    <aside class="panel guide"><h3>Five steps to a defensible case</h3><ol><li><strong>Observe:</strong> state what is visible or recorded.</li><li><strong>Record:</strong> retain source, event time, timezone and recorder.</li><li><strong>Verify:</strong> compare IDs, quantities, amounts and approvals.</li><li><strong>Escalate:</strong> record the recipient, uncertainty and next action.</li><li><strong>Close:</strong> record the finding, outcome, reviewer and time.</li></ol><p>A missing record is not proof of intent. The supplied rules are fictional training rules.</p><button id="browseEvidence">Inspect supporting records</button></aside></div>
+    <article class="panel spaced"><div class="bar"><h3>All observations</h3><div class="buttons"><button id="exportIncidents">Export incident CSV</button><button id="resetButton" class="danger">Reset synthetic demo</button></div></div><p class="small">Review actions retain prior observations and add an attributed history entry. All counts above refer to the complete register.</p><div class="tablewrap" tabindex="0" role="region" aria-label="Incident register table"><table><thead><tr><th scope="col">ID / observed time</th><th scope="col">Source / facts</th><th scope="col">Priority / evidence</th><th scope="col">Workflow / review</th></tr></thead><tbody id="incidentRows"></tbody></table></div></article>
+    <article id="incidentReviewPanel" class="panel spaced" hidden><h3 id="incidentReviewTitle">Review incident</h3><p id="reviewVersion" class="small"></p><form id="reviewForm" novalidate>
+      <div><label for="reviewStatus">Workflow status</label><select id="reviewStatus"><option>Open</option><option>Escalated</option><option>Resolved</option></select></div>
+      <div><label for="reviewConfidence">Evidence state</label><select id="reviewConfidence"></select></div>
+      <div><label for="reviewPriority">Provisional priority</label><select id="reviewPriority"><option>Low</option><option>Medium</option><option>High</option></select></div>
+      <div><label for="reviewActor">Reviewer / actor</label><input id="reviewActor" required maxlength="80"></div>
+      <div class="wide"><label for="reviewRefs">Supporting record references</label><select id="reviewRefs" multiple size="4"></select></div>
+      <div class="wide"><label for="reviewFinding">Verification finding (required for qualified evidence / closure)</label><textarea id="reviewFinding" maxlength="2000"></textarea></div>
+      <div><label for="reviewAssigned">Assigned to / escalation recipient</label><input id="reviewAssigned" maxlength="100"></div>
+      <div><label for="reviewDisposition">Resolution outcome (required to resolve)</label><textarea id="reviewDisposition" maxlength="2000"></textarea></div>
+      <div class="wide"><label for="reviewReason">Reason / result for this update</label><textarea id="reviewReason" required minlength="12" maxlength="2000"></textarea></div>
+      <div class="wide"><label for="reviewCorrection">Correction to the original observation (optional; original is retained)</label><textarea id="reviewCorrection" maxlength="2000"></textarea></div>
+      <div class="wide"><p id="reviewFeedback" class="feedback" role="status"></p><div class="buttons"><button type="submit" class="primary">Save review and history</button><button type="button" id="cancelReview">Cancel review</button></div></div>
+    </form><h4>Attributed local history</h4><div id="incidentHistory"></div><p class="small">This local history is editable by the device owner. It is not a tamper-proof production audit log.</p></article>
+  </section>
+
+  <section id="tasks" aria-labelledby="tasksHeading" hidden><p class="eyebrow">03 / OPERATIONAL CHECKS</p><h2 id="tasksHeading" tabindex="-1">Review the underlying record, not just the status.</h2><article class="panel"><div class="bar"><p class="small">Current queue snapshot. Reviewers, findings and recipients are retained.</p><button id="exportTasks">Export task CSV</button></div><div class="tablewrap" tabindex="0" role="region" aria-label="Task queue table"><table><thead><tr><th scope="col">Reference</th><th scope="col">Review question / evidence</th><th scope="col">Status / result</th><th scope="col">Action</th></tr></thead><tbody id="taskRows"></tbody></table></div></article>
+    <article id="taskReviewPanel" class="panel spaced" hidden><h3 id="taskReviewTitle">Review task</h3><form id="taskForm" novalidate><div><label for="taskStatus">Status</label><select id="taskStatus"><option>Pending</option><option>Needs escalation</option><option>Reviewed</option></select></div><div><label for="taskActor">Reviewer</label><input id="taskActor" required maxlength="80"></div><div class="wide"><label for="taskRefs">Supporting records</label><select id="taskRefs" multiple size="3"></select></div><div><label for="taskAssigned">Escalation recipient (required when escalating)</label><input id="taskAssigned" maxlength="100"></div><div class="wide"><label for="taskFinding">Comparison, result and next action</label><textarea id="taskFinding" required minlength="12" maxlength="2000"></textarea></div><div class="wide"><p id="taskFeedback" class="feedback" role="status"></p><div class="buttons"><button type="submit" class="primary">Save task review</button><button type="button" id="cancelTask">Cancel task review</button></div></div></form><h4>Review history</h4><div id="taskHistory"></div></article>
+  </section>
+
+  <section id="evidence" aria-labelledby="evidenceHeading" hidden><p class="eyebrow">04 / EVIDENCE &amp; CASES</p><h2 id="evidenceHeading" tabindex="-1">Inspect the source. Make a specific comparison.</h2><p class="small">Every record and rule below is fictional. Worked examples are answer keys, not independent assessments or client results.</p><h3>Supporting records</h3><div id="evidenceRecords" class="two"></div><h3>Fictional training rules</h3><div id="policies" class="two"></div><h3>Worked case files</h3><div id="caseExamples"></div></section>
+
+  <section id="report" aria-labelledby="reportHeading" hidden><p class="eyebrow">05 / DAILY HANDOVER</p><h2 id="reportHeading" tabindex="-1">A declared day. Complete context. No silent omissions.</h2><article class="panel"><form id="reportSettings" class="report-controls" novalidate><div><label for="analyst">Prepared by (optional)</label><input id="analyst" maxlength="80"></div><div><label for="reportDate">Reporting date</label><input id="reportDate" type="date" required></div><div><label for="reportZone">Reporting timezone</label><select id="reportZone"></select></div><div><button type="submit" class="primary">Save report settings</button></div><p id="reportFeedback" class="feedback wide" role="status"></p></form><div class="bar report-controls"><p class="small">Includes incidents from the selected day and older unresolved cases. Future events and older resolved cases are excluded, with counts shown.</p><div class="buttons"><button id="downloadReport">Download .txt report</button><button id="printButton">Print / Save PDF</button></div></div><pre id="reportText" aria-label="Generated daily handover"></pre></article></section>
+
+  <section id="exercise" aria-labelledby="exerciseHeading" hidden><p class="eyebrow">06 / JUDGMENT</p><h2 id="exerciseHeading" tabindex="-1">Explain the next defensible step.</h2><article class="panel"><p class="small">Practice questions with an answer key. This is not an accredited assessment or proof of job readiness. For practical work, write an observation and verify a case against its records.</p><div id="questions"></div><button id="gradeButton" class="primary">Check answers</button><p id="score" role="status"></p></article></section>
+  <footer>Independent portfolio exercise · Synthetic records only · Local browser storage · No AI surveillance or production integrations</footer>
+</main>
+<noscript>This offline training application requires JavaScript. All source files are provided for inspection.</noscript>
+</body></html>

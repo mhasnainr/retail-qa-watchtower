@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="All supplied incidents, tasks and report settings satisfy domain rules" time="0.002932" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Store-local time converts to an exact UTC instant" time="0.025083" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Timezone conversion round-trips for each supported zone" time="0.010849" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Nonexistent DST local time is rejected" time="0.002421" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Ambiguous DST local time is rejected rather than guessed" time="0.002177" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Invalid calendar dates and normalized-but-invalid ISO timestamps are rejected" time="0.000430" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="DST reporting day spans 23 hours at spring-forward" time="0.005378" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="DST reporting day spans 25 hours at fall-back" time="0.006039" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Handover includes source-local event time and exact UTC time" time="0.006909" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Report has no eight-record cutoff and retains high-priority older open case" time="0.008646" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Old resolved and future records are excluded; prior unresolved records carry over" time="0.005977" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Reporting period is inclusive at start and exclusive at next midnight" time="0.011463" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Corroborated evidence cannot be asserted without actual references" time="0.000336" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="References from a different store cannot qualify the observation" time="0.000235" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Closure requires qualified evidence, reviewer, finding and disposition" time="0.000903" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Review retains original facts and appends attributed outcome and correction" time="0.000354" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Reopening keeps prior closure in history and clears active resolution time" time="0.000277" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Incident escalation requires a recipient" time="0.000216" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Task review records comparison and requires recipient when escalating" time="0.000241" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Independent concurrent additions survive replay even with identical Lamport order" time="0.000495" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Concurrent same-version reviews are detected and retained as conflicts" time="0.000318" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Reset generation rejects a stale operation rather than restoring pre-reset data" time="0.000359" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Reset starts a new generation while retaining settings in prior event history" time="0.000289" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Malformed incident event is rejected before replay" time="0.000483" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Unknown enum and missing timestamp cannot pass validation" time="0.000476" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="CSV fields use identical header schema to generated samples" time="0.000296" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="CSV quoting preserves embedded commas, quotes and newlines" time="0.000274" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Formula-leading, whitespace-leading and full-width formula characters are neutralized" time="0.000316" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Sample discount arithmetic and return discrepancy are internally consistent" time="0.000151" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<testcase name="Sample dispatch approval precedes matching exit and all compared fields match" time="0.000077" classname="test" file="/workspace/scratch/adbb98bb5212/retail-qa-watchtower/tests/core.test.cjs"/>
+	<!-- tests 30 -->
+	<!-- suites 0 -->
+	<!-- pass 30 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 233.756762 -->
+</testsuites>

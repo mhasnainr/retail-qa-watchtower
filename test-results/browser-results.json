@@ -1,0 +1,265 @@
+{
+  "version": "2.0.0",
+  "executedAt": "2026-10-24T18:35:08.903Z",
+  "browser": "153.0.8010.0",
+  "node": "v24.22.1",
+  "method": "Original v2 local assets served over loopback; isolated contexts; Asia/Karachi viewer timezone; desktop 1365×900; mobile 390×844; file launch separately checked.",
+  "total": 37,
+  "passed": 37,
+  "failed": 0,
+  "results": [
+    {
+      "id": "B01",
+      "title": "Initial page renders seeded metrics without JavaScript errors",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B02",
+      "title": "All six sections navigate with accessible current-page state",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B03",
+      "title": "Three distinct observation sequences step and start blank notes",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B04",
+      "title": "Required blank source is blocked with visible feedback",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B05",
+      "title": "Whitespace source is rejected with visible field-level feedback",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B06",
+      "title": "New incident records event timezone, creation time and actor",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B07",
+      "title": "Added incident and attributed history persist after reload",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B08",
+      "title": "Report retains incident dates, timezone and UTC event time",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B09",
+      "title": "Handover includes more than eight incidents without omission",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B10",
+      "title": "Report settings and analyst persist with defined carry-over scope",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B11",
+      "title": "Incident CSV exactly matches committed sample schema and seed values",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B12",
+      "title": "Task CSV downloads with comparison and attribution columns",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B13",
+      "title": "Harmless formula-like input is neutralized in CSV but preserved in JSON",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B14",
+      "title": "Text handover downloads with complete incident summary",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B15",
+      "title": "Corroborated label is blocked without supporting records",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B16",
+      "title": "Incident closure requires disposition and retains attributed review",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B17",
+      "title": "Unverified case cannot resolve and escalation requires recipient",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B18",
+      "title": "Review can reopen a case and append a correction without rewriting facts",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B19",
+      "title": "Task escalation records reviewer, comparison and recipient",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B20",
+      "title": "Concurrent tab additions are merged without lost records",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B21",
+      "title": "A stale review is rejected and its form draft remains",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B22",
+      "title": "Concurrent additions survive without Web Locks via unique operation keys",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B23",
+      "title": "Malformed stored entry is quarantined without crashing or overwriting raw data",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B24",
+      "title": "Corrupt old-format JSON is preserved with a visible recovery route",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B25",
+      "title": "Storage-write fault produces visible failure without claiming a save",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B26",
+      "title": "Completely blocked storage still renders with an explicit temporary option",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B27",
+      "title": "All six sections avoid page-wide mobile overflow",
+      "result": "PASS",
+      "detail": [
+        {
+          "tab": "desk",
+          "viewport": 390,
+          "width": 390
+        },
+        {
+          "tab": "incidents",
+          "viewport": 390,
+          "width": 390
+        },
+        {
+          "tab": "tasks",
+          "viewport": 390,
+          "width": 390
+        },
+        {
+          "tab": "evidence",
+          "viewport": 390,
+          "width": 390
+        },
+        {
+          "tab": "report",
+          "viewport": 390,
+          "width": 390
+        },
+        {
+          "tab": "exercise",
+          "viewport": 390,
+          "width": 390
+        }
+      ]
+    },
+    {
+      "id": "B28",
+      "title": "Print media shows only the handover with controls removed",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B29",
+      "title": "User HTML is escaped in register, report and history",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B30",
+      "title": "Reset cancel retains records; accept resets active state and preserves journal backup",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B31",
+      "title": "All six practice questions grade correct and unanswered selections",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B32",
+      "title": "Direct file launch loads all local assets and saves in tested Chromium",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B33",
+      "title": "Evidence viewer provides actual source fields and three worked case files",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B34",
+      "title": "Valid old-format observations migrate with original labels preserved for review",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B35",
+      "title": "Ambiguous observation time is visibly rejected rather than guessed",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B36",
+      "title": "Qualified evidence can be created with same-store records and a specific finding",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    },
+    {
+      "id": "B37",
+      "title": "A review opened before another tab resets the demo is rejected",
+      "result": "PASS",
+      "detail": "Expected behavior observed."
+    }
+  ]
+}

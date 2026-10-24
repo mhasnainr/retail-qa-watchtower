@@ -1,0 +1,206 @@
+{
+  "schema": "retail-qa-watchtower/v2",
+  "classification": "SYNTHETIC TRAINING DATA — NOT A COMPANY REPORT",
+  "state": {
+    "incidents": [
+      {
+        "version": 1,
+        "createdAt": "2026-10-24T18:10:00.000Z",
+        "updatedAt": "2026-10-24T18:10:00.000Z",
+        "createdBy": "Fictional Demo Analyst",
+        "reviewer": "",
+        "evidenceRefs": [],
+        "finding": "",
+        "disposition": "",
+        "assignedTo": "",
+        "resolvedAt": "",
+        "corrections": [],
+        "id": "OBS-1001",
+        "store": "Demo Store 101",
+        "camera": "CAM-02",
+        "observedAt": "2026-10-24T13:12:00.000Z",
+        "timeZone": "America/New_York",
+        "kind": "Inventory movement",
+        "priority": "Medium",
+        "confidence": "Needs verification",
+        "observed": "One carton approached the rear exit in the illustrated sequence. Departure and authorization are not established.",
+        "verify": "Request dispatch authorization for BOX-101-09 and compare movement details.",
+        "status": "Open",
+        "history": [
+          {
+            "at": "2026-10-24T18:10:00.000Z",
+            "actor": "Fictional Demo Analyst",
+            "action": "Created",
+            "note": "Seeded synthetic observation; authorization remains unverified.",
+            "from": "",
+            "to": "Open"
+          }
+        ]
+      },
+      {
+        "version": 1,
+        "createdAt": "2026-10-24T18:10:00.000Z",
+        "updatedAt": "2026-10-24T18:10:00.000Z",
+        "createdBy": "Fictional Demo Analyst",
+        "reviewer": "",
+        "evidenceRefs": [],
+        "finding": "",
+        "disposition": "",
+        "assignedTo": "",
+        "resolvedAt": "",
+        "corrections": [],
+        "id": "OBS-1002",
+        "store": "Demo Store 202",
+        "camera": "POS-REVIEW",
+        "observedAt": "2026-10-24T15:34:00.000Z",
+        "timeZone": "America/Chicago",
+        "kind": "Customer transaction",
+        "priority": "Medium",
+        "confidence": "Needs verification",
+        "observed": "The supplied POS extract records an $80 discount on a $200 transaction; the approval reference is absent from this extract.",
+        "verify": "Compare POS-441 with APPROVAL-INDEX-441 and request approval for TX-202-441.",
+        "status": "Open",
+        "history": [
+          {
+            "at": "2026-10-24T18:10:00.000Z",
+            "actor": "Fictional Demo Analyst",
+            "action": "Created",
+            "note": "Seeded synthetic discount check; approval completeness is unknown.",
+            "from": "",
+            "to": "Open"
+          }
+        ]
+      },
+      {
+        "version": 1,
+        "createdAt": "2026-10-24T18:10:00.000Z",
+        "updatedAt": "2026-10-24T18:15:00.000Z",
+        "createdBy": "Fictional Demo Analyst",
+        "reviewer": "Fictional Demo Analyst",
+        "evidenceRefs": [
+          "DISPATCH-607",
+          "EXIT-607"
+        ],
+        "finding": "Package PKG-303-07, quantity one, destination Demo Hub B and the 18:05 UTC movement match DISPATCH-607. Approval at 17:50 UTC precedes departure.",
+        "disposition": "Authorized transfer in the supplied fictional records; close with no deviation found.",
+        "assignedTo": "",
+        "resolvedAt": "2026-10-24T18:15:00.000Z",
+        "corrections": [],
+        "id": "OBS-1003",
+        "store": "Demo Store 303",
+        "camera": "CAM-03",
+        "observedAt": "2026-10-24T18:05:00.000Z",
+        "timeZone": "America/Los_Angeles",
+        "kind": "Branch exit",
+        "priority": "Low",
+        "confidence": "No deviation found",
+        "observed": "One package crossed the marked exit at 11:05 America/Los_Angeles in the synthetic exit log.",
+        "verify": "Retain DISPATCH-607 and EXIT-607 cross-check.",
+        "status": "Resolved",
+        "history": [
+          {
+            "at": "2026-10-24T18:10:00.000Z",
+            "actor": "Fictional Demo Analyst",
+            "action": "Created",
+            "note": "Created from EXIT-607.",
+            "from": "",
+            "to": "Open"
+          },
+          {
+            "at": "2026-10-24T18:15:00.000Z",
+            "actor": "Fictional Demo Analyst",
+            "action": "Reviewed",
+            "note": "Compared package, quantity, destination, time and prior approval. Authorized transfer; no deviation found.",
+            "from": "Open",
+            "to": "Resolved"
+          }
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "version": 1,
+        "status": "Pending",
+        "reviewer": "",
+        "finding": "",
+        "assignedTo": "",
+        "updatedAt": "2026-10-24T18:10:00.000Z",
+        "history": [],
+        "id": "RET-120",
+        "store": "Demo Store 101",
+        "type": "Sales return",
+        "question": "Does the return item match the original receipt?",
+        "evidenceRefs": [
+          "RECEIPT-120",
+          "RETURN-120"
+        ]
+      },
+      {
+        "version": 1,
+        "status": "Pending",
+        "reviewer": "",
+        "finding": "",
+        "assignedTo": "",
+        "updatedAt": "2026-10-24T18:10:00.000Z",
+        "history": [],
+        "id": "DISC-441",
+        "store": "Demo Store 202",
+        "type": "Discount check",
+        "question": "Can approval for the 40% discount be established from the supplied records?",
+        "evidenceRefs": [
+          "POS-441",
+          "APPROVAL-INDEX-441"
+        ]
+      },
+      {
+        "version": 1,
+        "status": "Pending",
+        "reviewer": "",
+        "finding": "",
+        "assignedTo": "",
+        "updatedAt": "2026-10-24T18:10:00.000Z",
+        "history": [],
+        "id": "CALL-219",
+        "store": "Demo Store 202",
+        "type": "Customer callback",
+        "question": "Was the callback completed by the promised time?",
+        "evidenceRefs": [
+          "CALL-219"
+        ]
+      },
+      {
+        "version": 1,
+        "status": "Reviewed",
+        "reviewer": "Fictional Demo Analyst",
+        "finding": "Package, quantity, destination and movement time match; approval precedes exit.",
+        "assignedTo": "",
+        "updatedAt": "2026-10-24T18:10:00.000Z",
+        "history": [
+          {
+            "at": "2026-10-24T18:15:00.000Z",
+            "actor": "Fictional Demo Analyst",
+            "action": "Reviewed",
+            "note": "Matched EXIT-607 to DISPATCH-607. No deviation found.",
+            "from": "Pending",
+            "to": "Reviewed"
+          }
+        ],
+        "id": "STOCK-607",
+        "store": "Demo Store 303",
+        "type": "Inventory movement",
+        "question": "Does the exit match the authorized dispatch?",
+        "evidenceRefs": [
+          "DISPATCH-607",
+          "EXIT-607"
+        ]
+      }
+    ],
+    "settings": {
+      "analyst": "",
+      "reportDate": "2026-10-24",
+      "reportZone": "America/New_York"
+    },
+    "generation": "initial",
+    "conflicts": []
+  }
+}

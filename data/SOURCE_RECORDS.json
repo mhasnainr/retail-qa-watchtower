@@ -1,0 +1,138 @@
+{
+  "classification": "SYNTHETIC TRAINING DATA — NOT A COMPANY REPORT",
+  "records": [
+    {
+      "id": "MOVE-101",
+      "store": "Demo Store 101",
+      "type": "Observation log",
+      "policy": "TRAIN-STOCK-01",
+      "fields": {
+        "observed_at": "2026-10-24T13:12:00.000Z",
+        "camera": "CAM-02",
+        "package_id": "BOX-101-09",
+        "quantity": 1,
+        "event": "Carton approached rear exit; departure not established",
+        "authorization": "Not supplied"
+      }
+    },
+    {
+      "id": "POS-441",
+      "store": "Demo Store 202",
+      "type": "POS transaction",
+      "policy": "TRAIN-DISC-01",
+      "fields": {
+        "transaction_id": "TX-202-441",
+        "at": "2026-10-24T15:34:00.000Z",
+        "gross_usd": 200,
+        "discount_usd": 80,
+        "net_usd": 120,
+        "discount_percent": 40,
+        "approval_reference": "Not present in supplied extract"
+      }
+    },
+    {
+      "id": "APPROVAL-INDEX-441",
+      "store": "Demo Store 202",
+      "type": "Approval search extract",
+      "policy": "TRAIN-DISC-01",
+      "fields": {
+        "searched_transaction": "TX-202-441",
+        "search_scope": "Training extract only, not a complete company system",
+        "matching_approval_count": 0,
+        "next_action": "Ask authorized supervisor for the matching approval"
+      }
+    },
+    {
+      "id": "DISPATCH-607",
+      "store": "Demo Store 303",
+      "type": "Approved dispatch",
+      "policy": "TRAIN-STOCK-01",
+      "fields": {
+        "dispatch_id": "DISPATCH-607",
+        "package_id": "PKG-303-07",
+        "quantity": 1,
+        "source": "Demo Store 303",
+        "destination": "Demo Hub B",
+        "approved_by": "Fictional Manager C",
+        "approved_at": "2026-10-24T17:50:00.000Z",
+        "scheduled_movement": "2026-10-24T18:05:00.000Z"
+      }
+    },
+    {
+      "id": "EXIT-607",
+      "store": "Demo Store 303",
+      "type": "Exit observation",
+      "policy": "TRAIN-STOCK-01",
+      "fields": {
+        "observed_at": "2026-10-24T18:05:00.000Z",
+        "camera": "CAM-03",
+        "package_id": "PKG-303-07",
+        "quantity": 1,
+        "destination_log": "Demo Hub B",
+        "dispatch_reference": "DISPATCH-607"
+      }
+    },
+    {
+      "id": "RECEIPT-120",
+      "store": "Demo Store 101",
+      "type": "Original receipt",
+      "policy": "TRAIN-RETURN-01",
+      "fields": {
+        "transaction_id": "TX-101-120",
+        "at": "2026-10-23T16:00:00.000Z",
+        "item": "PHONE-CASE-A",
+        "quantity": 1,
+        "paid_usd": 25
+      }
+    },
+    {
+      "id": "RETURN-120",
+      "store": "Demo Store 101",
+      "type": "Return request",
+      "policy": "TRAIN-RETURN-01",
+      "fields": {
+        "return_id": "RET-120",
+        "at": "2026-10-24T14:20:00.000Z",
+        "original_transaction": "TX-101-120",
+        "item": "CHARGER-B",
+        "quantity": 1,
+        "requested_refund_usd": 25
+      }
+    },
+    {
+      "id": "CALL-219",
+      "store": "Demo Store 202",
+      "type": "Callback record",
+      "policy": "TRAIN-CALL-01",
+      "fields": {
+        "customer_reference": "CUSTOMER-DEMO-12",
+        "promised_by": "2026-10-24T16:00:00.000Z",
+        "completed_at": "2026-10-24T15:45:00.000Z",
+        "outcome": "Synthetic callback completed",
+        "personal_contact_data": "None"
+      }
+    }
+  ],
+  "policies": [
+    {
+      "id": "TRAIN-STOCK-01",
+      "title": "Fictional training rule: stock transfer",
+      "rule": "Compare package ID, quantity, source, destination and movement time to a manager-approved dispatch. Movement alone does not establish an unauthorized transfer."
+    },
+    {
+      "id": "TRAIN-DISC-01",
+      "title": "Fictional training rule: discount approval",
+      "rule": "A discount above 20% requires a matching manager approval in this exercise. An absent approval in the supplied extract is a verification gap; request it before concluding that a policy violation occurred."
+    },
+    {
+      "id": "TRAIN-RETURN-01",
+      "title": "Fictional training rule: return reconciliation",
+      "rule": "Match the return to the original receipt, item, quantity and refund value. Escalate an unexplained item mismatch for clarification; do not infer intent."
+    },
+    {
+      "id": "TRAIN-CALL-01",
+      "title": "Fictional training rule: callback",
+      "rule": "Compare the promised callback time with the completed-call record. Record only the synthetic customer reference."
+    }
+  ]
+}
